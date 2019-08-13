@@ -15,11 +15,10 @@
   remember to change javascript name : jeecmsv9f
   -->
   <groupId>com.myfiction</groupId>
-  <artifactId>my-fiction</artifactId>
+  <artifactId>myfiction</artifactId>
   <packaging>war</packaging>
   <version>9.0</version>
   <url>http://www.myfiction.com</url>
-  <name>my-fiction</name>
   
   <properties>
   	 <!-- 
@@ -802,7 +801,7 @@
 	<!-- 
     <finalName>jeecmsv9f</finalName>
 	-->
-	<finalName>my-fiction</finalName>
+	<finalName>myfiction</finalName>
     <!-- 打包配置文件 -->
 	<resources>
 		<resource>
