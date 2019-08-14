@@ -1,3 +1,11 @@
+# Initialized Web Project
+
+# Use certain database
+use my_fiction_dev;
+
+# Update /jeecmsv8f to /myfiction in jc_config table
+update jc_config set context_path = '/myfiction' where config_id = 1; 
+
 #
 # Source for table jc_channel_other
 #
