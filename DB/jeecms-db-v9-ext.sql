@@ -1,10 +1,25 @@
+#
 # Initialized Web Project
+#
 
-# Use certain database
+#
+# Use database
+#
 use my_fiction_dev;
 
+#
 # Update /jeecmsv8f to /myfiction in jc_config table
+#
 update jc_config set context_path = '/myfiction' where config_id = 1; 
+
+#
+# Update site_name, keywords, description in jc_site table
+#
+update jc_site 
+set site_name = 'xxx小说网(xxxxxx.com)', 
+keywords = 'xxx小说网,最新章节,txt阅读', 
+description = '打眼最新小说《xx》最新章节列表免费全文阅读，xx txt阅读,无弹窗广告阅读！xxx小说网(xxxxx.com)免费提供xxx清爽干净的纯文字章节在线阅读。'
+where site_id = 1;
 
 #
 # Source for table jc_channel_other
