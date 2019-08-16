@@ -29,92 +29,25 @@
 	<script type="text/javascript"
 		src="/${res}/js/common.mianhuatang.la.js"></script>
 	<script type="text/javascript">
-$(function() {
-	Cms.siteFlow("${base}", location.href, document.referrer, "${site.config.flowSwitch?string}");
-	$.cookie("_site_id_cookie","${site.id!}",{path: '${base}' });
-});
-</script>
+		$(function() {
+			Cms.siteFlow("${base}", location.href, document.referrer,
+					"${site.config.flowSwitch?string}");
+			$.cookie("_site_id_cookie", "${site.id!}", {
+				path : '${base}'
+			});
+		});
+	</script>
 </head>
 
 <body>
-	<div class="topbar">
-		<ul>
-			<li id="home"><a href="http://www.mianhuatang.la">棉花糖小说网首页</a></li>
-			<li id="bookcase"><a
-				href="http://www.mianhuatang.la/modules/article/bookcase.php"
-				rel="nofollow" target="_blank">我的书架</a></li>
-			<li id="toplist"><a href="quanben">全本小说</a></li>
-			<li id="quanben"><a href="top/toptime.html" title="小说点击榜">点击榜</a></li>
-			<li id="visit"><a href="top/allvisit.html">口水榜</a></li>
-			<li id="vote"><a href="top/allvote.html">推荐榜</a></li>
-			<li id="fav"><a href="top/goodnum.html">收藏榜</a></li>
-			<li id="so"><a
-				href="http://zhannei.baidu.com/cse/search?s=7965856832468911224&entry=1"
-				rel="nofollow" target="_blank">站内搜索</a></li>
-			<script>
-			 (function() {
-				 var username = getCookie("username");
-				 if (username) {
-				   document.writeln("<li id=\"loginbarx\"><a href=\"http://www.mianhuatang.la/modules/article/bookcase.php\" rel=\"nofollow\" target=\"_blank\">个人中心</a></li><li><a rel=\"nofollow\" href=\"http://www.mianhuatang.la/logout.php\">退出登录</a></li>");
-				 }else{
-				   var jumpurl="";
-				   if(location.href.indexOf("jumpurl") == -1){
-				     jumpurl=location.href;
-				   }
-				   document.writeln("<li id=\"loginbarx\"><a href=\"http://www.mianhuatang.la/login.php?jumpurl="+jumpurl.replace('&','%26')+"\" rel=\"nofollow\" target=\"_blank\">个人中心</a></li>");
-				 }
-			 })();
-			 </script>
-		</ul>
+	[#include "../include/top.html"/] [#include "../include/header.html"/]
+	
+	<div class="warp">
+		<script type="text/javascript">
+			top_ad();
+		</script>
 	</div>
 
-	<div class="header">
-		<div class="warp">
-			<div id="logo">
-				<a href="" title="棉花糖小说网"><img alt="棉花糖小说网"
-					src="/${res}/images/logo.mianhuatang.la.gif" width="350"
-					height="80"></a>
-			</div>
-			<div class="search">
-				<script type="text/javascript">searchs();</script>
-				<div class="hotkeys">
-					<a href="book/13655.html">误惹妖孽王爷：废材逆天四小姐</a><a
-						href="book/19972.html">凡人修仙传仙界篇</a><a href="book/10822.html">最佳女婿</a><a
-						href="book/101409.html">天降巨富</a><a href="book/113298.html">我不想继承万亿家产</a><a
-						href="book/110948.html">我的徒弟，都是大佬</a><a href="book/27742.html">斗罗大陆4终极斗罗</a>
-				</div>
-			</div>
-			<!-- 
-			<script type="text/javascript">novel_menu();</script>
-			 -->
-			<ul class="novel_menu">
-				<li><a id="new" href="/top/lastupdate.html"><i class="new"></i>小说<br>更新</a></li>
-				<li><a href="/top/goodnum.html"><i class="top"></i>好评<br>排行</a></li>
-				<li><a href="/help/"><i class="help"></i>会员<br>帮助</a></li>
-				<li><a rel="nofollow" href=""><i class="info"></i>信息<br>反馈</a></li>
-				<li><a id="a-clo" rel="nofollow" onclick="fav();"
-					href="javascript:void(0);"><i class="fav"></i>收藏<br>本站</a></li>
-			</ul>
-		</div>
-		<div class="nav">
-			<ul>
-				<li><a href="" title="棉花糖小说网">小说首页</a></li>
-				<li><a href="mulu/1-1.html">玄幻魔法</a></li>
-				<li><a href="mulu/2-1.html">武侠修真</a></li>
-				<li><a href="mulu/3-1.html">都市言情</a></li>
-				<li><a href="mulu/4-1.html">历史军事</a></li>
-				<li><a href="mulu/5-1.html">侦探推理</a></li>
-				<li><a href="mulu/6-1.html">网游动漫</a></li>
-				<li><a href="mulu/7-1.html">科幻小说</a></li>
-				<li><a href="mulu/8-1.html">恐怖灵异</a></li>
-				<li><a href="mulu/9-1.html">同人小说</a></li>
-				<li><a href="mulu/10-1.html">穿越小说</a></li>
-			</ul>
-		</div>
-	</div>
-	<div class="warp">
-		<script type="text/javascript">top_ad();</script>
-	</div>
 	<div class="main">
 		<!--
 		<script type="text/javascript">toutiao();</script>
@@ -127,7 +60,7 @@ $(function() {
 				<font color="#FF1593" size="3px">棉花糖小说网，无弹窗小说网。如果你觉得www.mianhuatang.la不错，还请您向QQ群和微博里的朋友推荐分享下，谢谢！</font>
 				<br> "倡导文明阅读，绿色网络，从我做起，如发现侵权、非法、色情类小说或章节,<a href="\"
 					target="_blank"><span style="color: red">点此举报</span></a> 或联系 <span
-					style="color: red">admin#mianhuatang.la</span> 删除！！
+					style="color: red">admin#mianhuatang.la</span> 删除！！ 
 			</p>
 		</div>
 
@@ -143,10 +76,9 @@ $(function() {
 						<h1>三寸人间</h1>
 						<p class="author">
 							<span><script type="text/javascript">
-							qqtix(52140,"三寸人间","2014-09-12 02:24:16");
-							addbookcase(52140);
-							</script>
-							</span>三寸人间作者：<a href="author/耳根.html">耳根</a>
+								qqtix(52140, "三寸人间", "2014-09-12 02:24:16");
+								addbookcase(52140);
+							</script> </span>三寸人间作者：<a href="author/耳根.html">耳根</a>
 						</p>
 						<p id="intro">
 							小说《<strong>三寸人间</strong>》介绍：
@@ -828,7 +760,9 @@ $(function() {
 			</ul>
 		</div>
 		<div class="warp">
-			<script type="text/javascript">bot_ad();</script>
+			<script type="text/javascript">
+				bot_ad();
+			</script>
 		</div>
 		<div id="firendlink">
 			<strong>友情链接</strong><a href="book/14080.html" target="_blank">元尊最新章节</a>
@@ -870,18 +804,6 @@ $(function() {
 			</span>
 		</div>
 	</div>
-	<div class="footer">
-		<p class="foot_nav">
-			<a href="">小说首页</a> | <a href="quanben/Index.html">全本书库</a> | <a
-				href="Index1.html">手机小说</a> | <a href="map/Index.html">网站地图</a>
-		</p>
-		<p>
-			本站小说<a href="0/1/Index.html"><strong>宝鉴</strong></a>为转载作品，所有章节均由网友上传，转载至本站只是为了宣传本书让更多读者欣赏。
-		</p>
-		<p class="copyright">
-			Copyright &copy; 2014<a href="">棉花糖小说网</a> All rights Reserved
-		</p>
-	</div>
-	<script type="text/javascript">Cookie_set();window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	[#include "../include/footer.html"]
 </body>
 </html>

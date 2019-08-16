@@ -1,64 +1,45 @@
-<link rel="stylesheet" type="text/css" href="/${res}/css/login.css" />
-<!-- 百度统计代码 -->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?4674b425370d9f190347b297042ae0b1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-<script>
-function qkeypress(){
-	var q=$("input[name=q]");
-	if(q.val().trim()!=""){
-		$("input[name=q]").autocomplete("enable");
-	}else{
-		$("input[name=q]").autocomplete("disable");
-	}
-}
-function query(){
-	$.post("${base}/createToken.jspx", {}, function(data) {
-		$("#token").val(data.token);
-		$("#searchForm").submit();
-	}, "json");
-}
-$(function() {
-	$("input[name='q']").bind('keypress',function(event){
-	    if(event.keyCode == 13)     
-	    {  
-	    	event.preventDefault();
-	    	query();
-	    }  
-	});
-});
-</script>
-<header class="header rel">
-  <div class="header-jf"><a class="jf-btn" name="gb2big5" id="gb2big5">繁</a></div>
-  <Script Language=Javascript Src="${resSys}/gb2big5.js"></Script>
-  <div class="header-rss"><a class="rss-btn" href="${base}/rss.jspx" target="_blank" title="RSS订阅">RSS</a></div>
-  <div class="header-tag"><a class="tag-btn" href="${base}/tag.jspx" target="_blank" title="Tags标签">Tags</a></div>
-  <div class="container clearfix">
-    <a class="logo" href="${base}/"></a>
-    [#include "../include/nav.html"]
-    <div class="header-r">     
-      <div class="search">
-        <form action="${base}/search.jspx" target="_blank" name="searchForm" id="searchForm">
-        <input type="text" name="q" value="${oldq!}"   maxlength="50" autocomplete="off" class="searchCon" style="width:202px;">
-        <input type="hidden" name="token" id="token" value="${token!}" />
-        <input type="button" value="" class="searchMenu" onclick="query()" >
-        </form>
-      </div>      
-      <div id="loginCsiDiv" style="float:left;"></div>
-	  <script type="text/javascript">
-		$(function(){
-			[#if site.config.ssoEnable]
-			Cms.loginSSO('${base}');
-			[/#if]
-		});
-	   </script>
-	   [#include "../csi/login_csi.html"]
-    </div> 
-  </div>
-</header>
+<div class="header">
+	<div class="warp">
+		<div id="logo">
+			<a href="" title="棉花糖小说网"><img alt="棉花糖小说网"
+				src="/${res}/images/logo.mianhuatang.la.gif" width="350" height="80"></a>
+		</div>
+		<div class="search">
+			<script type="text/javascript">
+				searchs();
+			</script>
+			<div class="hotkeys">
+				<a href="book/13655.html">误惹妖孽王爷：废材逆天四小姐</a><a
+					href="book/19972.html">凡人修仙传仙界篇</a><a href="book/10822.html">最佳女婿</a><a
+					href="book/101409.html">天降巨富</a><a href="book/113298.html">我不想继承万亿家产</a><a
+					href="book/110948.html">我的徒弟，都是大佬</a><a href="book/27742.html">斗罗大陆4终极斗罗</a>
+			</div>
+		</div>
+		<!-- 
+			<script type="text/javascript">novel_menu();</script>
+			 -->
+		<ul class="novel_menu">
+			<li><a id="new" href="/top/lastupdate.html"><i class="new"></i>小说<br>更新</a></li>
+			<li><a href="/top/goodnum.html"><i class="top"></i>好评<br>排行</a></li>
+			<li><a href="/help/"><i class="help"></i>会员<br>帮助</a></li>
+			<li><a rel="nofollow" href=""><i class="info"></i>信息<br>反馈</a></li>
+			<li><a id="a-clo" rel="nofollow" onclick="fav();"
+				href="javascript:void(0);"><i class="fav"></i>收藏<br>本站</a></li>
+		</ul>
+	</div>
+	<div class="nav">
+		<ul>
+			<li><a href="" title="棉花糖小说网">小说首页</a></li>
+			<li><a href="mulu/1-1.html">玄幻魔法</a></li>
+			<li><a href="mulu/2-1.html">武侠修真</a></li>
+			<li><a href="mulu/3-1.html">都市言情</a></li>
+			<li><a href="mulu/4-1.html">历史军事</a></li>
+			<li><a href="mulu/5-1.html">侦探推理</a></li>
+			<li><a href="mulu/6-1.html">网游动漫</a></li>
+			<li><a href="mulu/7-1.html">科幻小说</a></li>
+			<li><a href="mulu/8-1.html">恐怖灵异</a></li>
+			<li><a href="mulu/9-1.html">同人小说</a></li>
+			<li><a href="mulu/10-1.html">穿越小说</a></li>
+		</ul>
+	</div>
+</div>

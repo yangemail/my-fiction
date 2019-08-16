@@ -1,40 +1,15 @@
-<footer class="footer">
-  <div class="footer-link container">
-    <a style="margin-left:0;" href="http://www.jeecms.com">关于我们</a><a href="http://www.jeecms.com/lxwm.htm">联系我们</a><a href="http://www.jeecms.com/zhaopin.htm">诚聘英才</a><a href="http://www.jeecms.com/">友情链接</a><a href="http://bbs.jeecms.com/fabu/index.jhtml">程序下载</a><a href="http://www.jeecms.com/ad.htm">合作服务</a><a href="http://www.jeecms.com/xkxy.htm">许可协议</a><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a><a onclick="SetHome(window.location)" href="javascript:void(0)">设为首页</a><a href="${base}/jeeadmin/jeecms/index.do" target="_blank">管理登录</a>
-  </div>
-  <div class="copyright container"><p>电话：0791-86538070　13576281815     传真：0791-86538070     ICP备案号：赣ICP备13005266号     Powered by JeeCms Copyright © 2007-2015 www.jeecms.com, All Rights Reserved</p>
-   [#if site.config.flowSwitch]
-   	<p>
-  	浏览总量<span id="pv"></span> |  访客数总量 <span id="visitor"></span>|  
-  	今日浏览总量<span id="dayPv"></span>  |  今日访客数<span id="dayVisitor"></span>|  
-  	本周浏览总量<span id="weekPv"></span>  |  本周访客数<span id="weekVisitor"></span>| 
-  	本月浏览总量<span id="monthPv"></span>  |  本月访客数<span id="monthVisitor"></span>
-  	</p> 
-  [/#if]
-  </div>
-</footer>
-<script type="text/javascript" language="javascript">
-   //加入收藏
-       function AddFavorite(sURL, sTitle) {
-           sURL =encodeURI(sURL); 
-       try{   
-          window.external.addFavorite(sURL, sTitle);   
-       }catch(e) {   
-          try{   
-              window.sidebar.addPanel(sTitle, sURL, "");   
-           }catch (e){   
-              alert("您的浏览器不支持自动加入收藏功能，请使用Ctrl+D进行添加，或手动在浏览器里进行设置！");
-          }   
-       }
-   }
-   
-   //设为首页
-   function SetHome(url){
-       if (document.all) {
-          document.body.style.behavior='url(#default#homepage)';
-             document.body.setHomePage(url);
-       }else{
-           alert("您的浏览器不支持自动设置页面为首页功能，请您手动在浏览器里设置该页面为首页！");
-       }
-   }
-</script>
+<div class="footer">
+	<p class="foot_nav">
+		<a href="">小说首页</a> | <a href="quanben/Index.html">全本书库</a> | <a
+			href="Index1.html">手机小说</a> | <a href="map/Index.html">网站地图</a>
+	</p>
+	<p>
+		本站小说<a href="0/1/Index.html"><strong>宝鉴</strong></a>为转载作品，所有章节均由网友上传，转载至本站只是为了宣传本书让更多读者欣赏。
+	</p>
+	<p class="copyright">
+		Copyright &copy; 2014<a href="">棉花糖小说网</a> All rights Reserved
+	</p>
+</div>
+<!-- 
+	<script type="text/javascript">Cookie_set();window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	 -->
