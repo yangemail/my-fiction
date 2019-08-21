@@ -1,30 +1,71 @@
+<script type="text/javascript">
+$(function() {
+	$('#logout').click(function() {
+		location="${base}/logout.jspx?returnUrl=/";
+	});
+});
+</script>
+
 <div class="topbar">
-		<ul>
-			<li id="home"><a href="http://www.mianhuatang.la">棉花糖小说网首页</a></li>
-			<li id="bookcase"><a
-				href="http://www.mianhuatang.la/modules/article/bookcase.php"
-				rel="nofollow" target="_blank">我的书架</a></li>
-			<li id="toplist"><a href="quanben">全本小说</a></li>
-			<li id="quanben"><a href="top/toptime.html" title="小说点击榜">点击榜</a></li>
-			<li id="visit"><a href="top/allvisit.html">口水榜</a></li>
-			<li id="vote"><a href="top/allvote.html">推荐榜</a></li>
-			<li id="fav"><a href="top/goodnum.html">收藏榜</a></li>
-			<li id="so"><a
-				href="http://zhannei.baidu.com/cse/search?s=7965856832468911224&entry=1"
-				rel="nofollow" target="_blank">站内搜索</a></li>
-			<script>
-			 (function() {
-				 var username = getCookie("username");
-				 if (username) {
-				   document.writeln("<li id=\"loginbarx\"><a href=\"http://www.mianhuatang.la/modules/article/bookcase.php\" rel=\"nofollow\" target=\"_blank\">个人中心</a></li><li><a rel=\"nofollow\" href=\"http://www.mianhuatang.la/logout.php\">退出登录</a></li>");
-				 }else{
-				   var jumpurl="";
-				   if(location.href.indexOf("jumpurl") == -1){
-				     jumpurl=location.href;
-				   }
-				   document.writeln("<li id=\"loginbarx\"><a href=\"http://www.mianhuatang.la/login.php?jumpurl="+jumpurl.replace('&','%26')+"\" rel=\"nofollow\" target=\"_blank\">个人中心</a></li>");
-				 }
-			 })();
-			 </script>
-		</ul>
-	</div>
+	<ul>
+		<li id="home"><a href="http://www.mianhuatang.la">棉花糖小说网首页</a></li>
+		<li id="bookcase"><a
+			href="http://www.mianhuatang.la/modules/article/bookcase.php"
+			rel="nofollow" target="_blank">我的书架</a></li>
+		<li id="toplist"><a href="quanben">全本小说</a></li>
+		<li id="quanben"><a href="top/toptime.html" title="小说点击榜">点击榜</a></li>
+		<li id="visit"><a href="top/allvisit.html">口水榜</a></li>
+		<li id="vote"><a href="top/allvote.html">推荐榜</a></li>
+		<li id="fav"><a href="top/goodnum.html">收藏榜</a></li>
+		<li id="so"><a
+			href="http://zhannei.baidu.com/cse/search?s=7965856832468911224&entry=1"
+			rel="nofollow" target="_blank">站内搜索</a></li>
+
+		<!-- 
+		<script>
+			(function() {
+				var username = getCookie("username");
+				if (username) {
+					document
+							.writeln("<li id=\"loginbarx\"><a href=\"http://www.mianhuatang.la/modules/article/bookcase.php\" rel=\"nofollow\" target=\"_blank\">个人中心</a></li><li><a rel=\"nofollow\" href=\"http://www.mianhuatang.la/logout.php\">退出登录</a></li>");
+				} else {
+					var jumpurl = "";
+					if (location.href.indexOf("jumpurl") == -1) {
+						jumpurl = location.href;
+					}
+					document
+							.writeln("<li id=\"loginbarx\"><a href=\"http://www.mianhuatang.la/login.php?jumpurl="
+									+ jumpurl.replace('&', '%26')
+									+ "\" rel=\"nofollow\" target=\"_blank\">个人中心</a></li>");
+				}
+			})();
+		</script>
+		 -->
+
+		[#if user??]
+		<li id="loginbarx"><a
+			href="http://www.mianhuatang.la/modules/article/bookcase.php"
+			rel="nofollow" target="_blank">个人中心</a></li>
+		<li><a id="logout" rel="nofollow" >退出登录</a></li>
+		<!-- 
+		<div class="login-user">
+			<a>[#if user.userImg??]<img src="${user.userImg}">[#else]<img
+				src="/${res}/images/userImg.png">[/#if]${user.username}
+			</a>
+			<div class="user-child">
+				<a href="${base}/member/index.jspx">会员中心</a><a id="logout">退出账号</a>
+			</div>
+		</div>
+		 -->
+		[#else]
+		<li id="loginbarx"><a href="${base}/login.jspx">登录</a></li>
+		<!-- 
+		<div class="login">
+			<a class="tc" href="${base}/login.jspx">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+				href="${base}/register.jspx">注册</a>
+		</div>
+		 -->
+		[/#if]
+
+	</ul>
+</div>

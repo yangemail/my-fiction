@@ -11,9 +11,9 @@
 <link type="text/css" rel="stylesheet" href="/${res}/css/home.css" />
  -->
 	<link type="text/css" rel="stylesheet"
-		href="/${res}/css/style.mianhuatang.la.css" />
+		href="/${res}/css/style.css" />
 	<link type="text/css" rel="stylesheet"
-		href="/${res}/css/index.mianhuatang.la.css" />
+		href="/${res}/css/index.css" />
 
 	<!-- <meta name="mobile-agent"
 	content="format=html5; url=http://m.mianhuatang.la/"> -->
@@ -27,7 +27,7 @@
 <script src="/${res}/js/respond.min.js"></script>
 <![endif]-->
 	<script type="text/javascript"
-		src="/${res}/js/common.mianhuatang.la.js"></script>
+		src="/${res}/js/common.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			Cms.siteFlow("${base}", location.href, document.referrer,
@@ -42,12 +42,6 @@
 <body>
 	[#include "../include/top.html"/] [#include "../include/header.html"/]
 	
-	<div class="warp">
-		<script type="text/javascript">
-			top_ad();
-		</script>
-	</div>
-
 	<div class="main">
 		<!--
 		<script type="text/javascript">toutiao();</script>
@@ -759,11 +753,7 @@
 				<li><a href="74/74173/Index.html" target="_blank">诡缠人</a></li>
 			</ul>
 		</div>
-		<div class="warp">
-			<script type="text/javascript">
-				bot_ad();
-			</script>
-		</div>
+		[#include "../include/bot_add.html"]
 		<div id="firendlink">
 			<strong>友情链接</strong><a href="book/14080.html" target="_blank">元尊最新章节</a>
 			<a href="book/62602.html" target="_blank">飞剑问道最新章节</a> <a
