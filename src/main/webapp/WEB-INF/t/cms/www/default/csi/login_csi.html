@@ -1,9 +1,8 @@
 [#if user??]
-		<li id="loginbarx"><a
-			href="${base}/member/index.jspx"
-			rel="nofollow" target="_blank">个人中心</a></li>
-		<li><a id="logout" rel="nofollow" >退出登录</a></li>
-		<!-- 
+<li id="loginbarx"><a href="${base}/member/collection_list.jspx"
+	rel="nofollow" target="_blank">个人中心</a></li>
+<li><a id="logout" rel="nofollow">退出登录</a></li>
+<!-- 
 		<div class="login-user">
 			<a>[#if user.userImg??]<img src="${user.userImg}">[#else]<img
 				src="/${res}/images/userImg.png">[/#if]${user.username}
@@ -13,12 +12,12 @@
 			</div>
 		</div>
 		 -->
-		[#else]
-		<li id="loginbarx"><a href="${base}/login.jspx">登录</a></li>
-		<!-- 
+[#else]
+<li id="loginbarx"><a href="${base}/login.jspx">登录</a></li>
+<!-- 
 		<div class="login">
 			<a class="tc" href="${base}/login.jspx">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
 				href="${base}/register.jspx">注册</a>
 		</div>
 		 -->
-		[/#if]
+[/#if]
