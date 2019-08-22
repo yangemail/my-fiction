@@ -43,6 +43,7 @@
 		<form id="jvForm" name="frmlogin" method="post"
 			action="${base}/login.jspx" onsubmit="return login()">
 			
+			<!-- 
 			<div class="inf-message">
 				[#if message??] [#if message=="true"] 您必须登录后才能继续刚才的操作 [#else]
 				${message} [/#if] <input type="hidden" name="message"
@@ -65,6 +66,7 @@
 					"error.userUnChecked"/] [/#if]</div>
 				[/#if] [#if success??] [#if success] 注册成功！ [/#if] [/#if]
 			</div>
+			 -->
 			 
 			<table class="grid" width="250" align="center">
 				<caption>用户登录</caption>
@@ -93,7 +95,7 @@
 				</tr>
 				<tr align="center">
 					<td class="foot"><a
-						href="http://www.mianhuatang.la/register.php">新用户注册</a></td>
+						href="${base}/register.jspx">新用户注册</a></td>
 				</tr>
 			</table>
 		</form>
