@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ext.cms.manager.main.MyChannelMng;
+import com.ext.cms.manager.main.ChannelMng2;
 import com.jeecms.cms.action.directive.abs.AbstractChannelDirective;
 import com.jeecms.cms.manager.main.ChannelMng;
 import com.jeecms.common.web.freemarker.DirectiveUtils;
@@ -20,7 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * 栏目标签基类
  */
-public abstract class MyAbstractChannelDirective extends AbstractChannelDirective {
+public abstract class AbstractChannelDirective2 extends AbstractChannelDirective {
 
 	/**
 	 * 输入参数，推荐。0：所有；1：推荐；2：不推荐。默认所有。
@@ -138,17 +138,17 @@ public abstract class MyAbstractChannelDirective extends AbstractChannelDirectiv
 		
 		if(isChildOnly != null && isChildOnly) {
 			int first = FrontUtils.getFirst(params);
-			return myChannelMng.getChildListForTag(hasContentOnly, recommend, orderBy, first, count);
+			return channelMng2.getChildListForTag(hasContentOnly, recommend, orderBy, first, count);
 		}
 		// TODO: Analyse: recommend, pageNo, first
 		if(parentId != null) {
 			if(isPage()) {
 				int pageNo = FrontUtils.getPageNo(env);
 				// TODO:
-				return myChannelMng.getChildListForTag(parentId, hasContentOnly);
+				return channelMng2.getChildListForTag(parentId, hasContentOnly);
 			} else {
 				int first = FrontUtils.getFirst(params);
-				return myChannelMng.getChildListByParentIdForTag(parentId, hasContentOnly, recommend, orderBy, first, count);
+				return channelMng2.getChildListByParentIdForTag(parentId, hasContentOnly, recommend, orderBy, first, count);
 			}
 		}
 //		if(siteId != null) {
@@ -174,7 +174,7 @@ public abstract class MyAbstractChannelDirective extends AbstractChannelDirectiv
 			return null;
 		} else {
 			int first = FrontUtils.getFirst(params);
-			return myChannelMng.getListBySiteIdForTag(siteId, hasContentOnly, recommend, orderBy, first, count);
+			return channelMng2.getListBySiteIdForTag(siteId, hasContentOnly, recommend, orderBy, first, count);
 //			return myChannelMng.getTopListForTag(siteId, hasContentOnly);
 		}
 	}
@@ -182,6 +182,6 @@ public abstract class MyAbstractChannelDirective extends AbstractChannelDirectiv
 	abstract protected boolean isPage();
 
 	@Autowired
-	protected MyChannelMng myChannelMng;
+	protected ChannelMng2 channelMng2;
 
 }

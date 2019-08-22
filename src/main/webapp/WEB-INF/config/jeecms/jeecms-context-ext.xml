@@ -4,12 +4,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd"
 	default-lazy-init="true">
 
-	<!-- My 标签 -->
-	<bean id="my_cms_channel_list"
-		class="com.ext.cms.action.directive.MyChannelListDirective" />
+	<!-- Customized 标签 -->
+	<bean id="cms_channel_list2"
+		class="com.ext.cms.action.directive.ChannelListDirective2" />
 
-	<!-- My MANAGER -->
-	<bean id="myChannelMng" class="com.ext.cms.manager.main.impl.MyChannelMngImpl">
+	<!-- Customized MANAGER -->
+	<bean id="channelMng2" class="com.ext.cms.manager.main.impl.ChannelMngImpl2">
 		<property name="deleteCheckerList">
 			<list>
 				<ref bean="contentMng" />
@@ -19,7 +19,7 @@
 		</property>
 	</bean>
 
-	<!-- My DAO -->
-	<bean id="myChannelDao"
-		class="com.ext.cms.dao.main.impl.MyChannelDaoImpl" />
+	<!-- Customized DAO -->
+	<bean id="channelDao"
+		class="com.ext.cms.dao.main.impl.ChannelDaoImpl2" />
 </beans>

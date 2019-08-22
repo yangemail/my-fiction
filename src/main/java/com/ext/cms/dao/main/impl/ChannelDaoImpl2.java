@@ -4,13 +4,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.ext.cms.dao.main.MyChannelDao;
+import com.ext.cms.dao.main.ChannelDao2;
 import com.jeecms.cms.dao.main.impl.ChannelDaoImpl;
 import com.jeecms.cms.entity.main.Channel;
 import com.jeecms.common.hibernate4.Finder;
 
 @Repository
-public class MyChannelDaoImpl extends ChannelDaoImpl implements MyChannelDao {
+public class ChannelDaoImpl2 extends ChannelDaoImpl implements ChannelDao2 {
 
 	@Override
 	public List<Channel> getChildList(boolean hasContentOnly, boolean displayOnly, boolean cacheable, Boolean recommend, int orderBy,

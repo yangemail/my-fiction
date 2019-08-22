@@ -13,7 +13,7 @@ import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.ext.cms.action.directive.abs.MyAbstractChannelDirective;
+import com.ext.cms.action.directive.abs.AbstractChannelDirective2;
 import com.jeecms.cms.entity.main.Channel;
 import com.jeecms.common.web.freemarker.DefaultObjectWrapperBuilderFactory;
 import com.jeecms.common.web.freemarker.DirectiveUtils;
@@ -30,7 +30,7 @@ import freemarker.template.TemplateModel;
 /**
  * 栏目列表标签
  */
-public class MyChannelListDirective extends MyAbstractChannelDirective {
+public class ChannelListDirective2 extends AbstractChannelDirective2 {
 
 	/**
 	 * 模板名称
@@ -81,7 +81,7 @@ public class MyChannelListDirective extends MyAbstractChannelDirective {
 		
 		if(ids != null) {
 			// TODO:
-			return myChannelMng.getListByIdsForTag(ids, getOrderBy(params));			
+			return channelMng2.getListByIdsForTag(ids, getOrderBy(params));			
 		} else {
 			return (List<Channel>) super.getData(params, env);
 		}

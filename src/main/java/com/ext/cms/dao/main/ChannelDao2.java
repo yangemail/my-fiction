@@ -5,7 +5,7 @@ import java.util.List;
 import com.jeecms.cms.dao.main.ChannelDao;
 import com.jeecms.cms.entity.main.Channel;
 
-public interface MyChannelDao extends ChannelDao {
+public interface ChannelDao2 extends ChannelDao {
 
 	List<Channel> getListBySiteId(Integer siteId, boolean hasContentOnly, boolean displayOnly, boolean cacheable, Boolean recommend,
 			int orderBy, Integer first, Integer count);
