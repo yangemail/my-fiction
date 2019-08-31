@@ -1,6 +1,14 @@
 <div class="nav">
 	<ul>
 		<li><a href="" title="棉花糖小说网">小说首页</a></li>
+		[@cms_topic_list]
+		[#if !topic??]
+		[#list tag_list as t]
+			<li><a href="${base}/topic/${t.id}.jspx">${t.name}</a></li>
+		[/#list]
+		[/#if]
+		[/@cms_topic_list]
+		<!-- 
 		<li><a href="mulu/1-1.html">玄幻魔法</a></li>
 		<li><a href="mulu/2-1.html">武侠修真</a></li>
 		<li><a href="mulu/3-1.html">都市言情</a></li>
@@ -11,5 +19,6 @@
 		<li><a href="mulu/8-1.html">恐怖灵异</a></li>
 		<li><a href="mulu/9-1.html">同人小说</a></li>
 		<li><a href="mulu/10-1.html">穿越小说</a></li>
+		 -->
 	</ul>
 </div>
