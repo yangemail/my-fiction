@@ -1,11 +1,4 @@
-#
-# Initialized Web Project
-#
-
-#
-# Use database
-#
-use my_fiction_dev;
+SET FOREIGN_KEY_CHECKS=0;
 
 #
 # Update /jeecmsv8f to /myfiction for jc_config table
@@ -22,9 +15,9 @@ UPDATE jc_site SET site_name = 'xxx小说网(xxxxxx.com)', keywords = 'xxx小说
 #
 UPDATE jc_model SET is_def = 0 WHERE is_def <> 0;
 #
-# Dumping data for table jc_model
+# Dumping data for table jc_model - Add fiction into jc_model table
 #
-INSERT INTO jc_model (model_id, model_name, model_path, tpl_channel_prefix, tpl_content_prefix, title_img_width, title_img_height, content_img_width, content_img_height, priority, has_content, is_disabled, is_def, is_global, site_id) VALUES (101, '小说', 'fiction', 'fiction', 'fiction', 139, 139, 310, 310, 100, 1, 0, 1, 1, null);
+INSERT INTO jc_model (model_id, model_name, model_path, tpl_channel_prefix, tpl_content_prefix, title_img_width, title_img_height, content_img_width, content_img_height, priority, has_content, is_disabled, is_def, is_global, site_id) VALUES (100, '小说', 'fiction', 'fiction', 'fiction', 139, 139, 310, 310, 100, 1, 0, 1, 1, null);
 
 #
 # Dumping data for table jc_model_item - channel
@@ -89,65 +82,90 @@ INSERT INTO `jc_model_item` (`modelitem_id`,`model_id`,`field`,`item_label`,`pri
 #
 # Dumping data for table jc_channel
 #
-INSERT INTO `jc_channel` (`channel_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`, `model_id`, `parent_id`, `site_id`) VALUES (94,100,1,NULL,'xhmf',23,24,10,1,1);
+#UPDATE `jc_channel` SET is_display = 0 WHERE channel_id IN (75, 76, 77, 78, 79, 80, 82, 90, 91, 92, 93) AND is_display <> 0;
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (94,100,1,NULL,'xhmf',23,36,110,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (95,100,1,94,'wjwdmz',24,25,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (96,100,1,94,'hdtdj',26,27,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (98,100,1,94,'jwzjddz',28,29,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (99,100,1,94,'kbnx',30,31,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (100,100,1,NULL,'wxxz',37,48,120,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (101,100,1,NULL,'dsyq',49,54,130,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (102,100,1,100,'wsddxy',38,39,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (103,100,1,100,'wdhdz',40,41,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (104,100,1,100,'xbrr',42,43,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (105,100,1,100,'ptc',44,45,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (107,100,1,101,'c1983ks',50,51,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (108,100,1,101,'wjxtngy',52,53,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (109,100,1,100,'wzdtjzb',46,47,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (111,100,1,94,'xaqndzslh',32,33,10,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (112,100,1,NULL,'lsjs',55,56,140,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (113,100,1,NULL,'zttl',57,58,150,1,1);
+#INSERT INTO `jc_channel` (`channel_id`, `model_id`, `site_id`, `parent_id`, `channel_path`, `lft`, `rgt`, `priority`, `has_content`, `is_display`) VALUES (114,100,1,94,'md',34,35,10,1,1);
 
 #
 # Dumping data for table jc_channel_ext
 #
-INSERT INTO `jc_channel_ext` (`channel_id`, channel_name, final_step, after_check, is_static_channel, is_static_content, is_access_by_dir, is_list_child, page_size, channel_rule, content_rule, link, tpl_channel, tpl_mobile_channel, tpl_content, title_img, content_img, has_title_img, has_content_img, title_img_width, title_img_height, content_img_width, content_img_height, comment_control, allow_updown, allow_share, allow_score, is_blank, title, keywords, description, channel_id) VALUES (94,'玄幻魔法',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'玄幻魔法','好看的玄幻魔法小说最新','好看的玄幻魔法小说最新',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (94,'玄幻魔法',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'玄幻魔法','好看的玄幻魔法小说最新','好看的玄幻魔法小说最新',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (95,'万界无敌门主',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'万界无敌门主',NULL,'穿越到了一个名存实亡的门派，林峰压根不慌，有了无敌抽奖系统，我无敌，你随意。\nTags： 万界无敌门主无弹窗广告 万界无敌门主最新章节 万界无敌门主txt下载\n《万界无敌门主》为作者无敌狂徒创作，目前连载中，棉花糖为你第一时间提供无敌狂徒精心编写原创万界无敌门主最新章节及无弹窗广告、TXT电子书阅读等服务。',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (96,'混沌天帝诀',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'混沌天帝诀','混沌天帝诀','【【2017玄幻征文】参赛作品】身怀至尊天子之血，开启最强天子之眼！ 武技复制！嗜血狂暴！看破虚幻！记忆读取！焚世黑炎！分身瞬移！空间粉碎！ 无限视界！时间静止！……【混沌天帝】凌峰：“我凭这双眼，敢叫天地颤栗！”\nTags： 混沌天帝诀无弹窗广告 混沌天帝诀最新章节 混沌天帝诀txt下载\n《混沌天帝诀》为作者剑轻阳创作，目前连载中，棉花糖为你第一时间提供剑轻阳精心编写原创混沌天帝诀最新章节及无弹窗广告、TXT电子书阅读等服务。',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (98,'剑王之剑道独尊',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'剑王之剑道独尊','剑王之剑道独尊','剑王之剑道独尊',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (99,'狂暴逆袭',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'狂暴逆袭',NULL,NULL,1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (100,'武侠修真',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'武侠修真',NULL,NULL,1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (101,'都市言情',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'都市言情',NULL,NULL,1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (102,'我是大大侠呀',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'我是大大侠呀',NULL,NULL,1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (103,'无敌混沌钟',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'无敌混沌钟','无敌混沌钟','无敌混沌钟',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (104,'仙不容人',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'仙不容人','仙不容人','仙不容人',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (105,'平天策',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'平天策','平天策','平天策',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (107,'从1983开始',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'从1983开始','从1983开始','从1983开始',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (108,'我家系统能改运',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'我家系统能改运','我家系统能改运','我家系统能改运',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (109,'我在大唐捡装备',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'我在大唐捡装备','我在大唐捡装备','我在大唐捡装备',1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (111,'相爱千年的转世轮回',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'相爱千年的转世轮回',NULL,NULL,1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (112,'历史军事',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'历史军事',NULL,NULL,1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (113,'侦探推理',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'侦探推理',NULL,NULL,1,1,'');
+#INSERT INTO `jc_channel_ext` (`channel_id`, `channel_name`, `final_step`, `after_check`, `is_static_channel`, `is_static_content`, `is_access_by_dir`, `is_list_child`, `page_size`, `channel_rule`, `content_rule`, `link`, `tpl_channel`, `tpl_content`, `title_img`, `content_img`, `has_title_img`, `has_content_img`, `title_img_width`, `title_img_height`, `content_img_width`, `content_img_height`, `comment_control`, `allow_updown`, `is_blank`, `title`, `keywords`, `description`, `allow_share`, `allow_score`, `tpl_mobile_channel`) VALUES (114,'磨刀',NULL,NULL,'0','0','1','0',20,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,0,139,139,310,310,3,1,0,'磨刀',NULL,NULL,1,1,'');
 
 #
 # Dumping data for table jc_channel_count
 #
-INSERT INTO `jc_channel_count` (views, views_month, views_week, views_day, content_count_total, content_count_day, content_count_month, content_count_week, content_count_year, channel_id) VALUES (94,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (94,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (95,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (96,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (98,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (99,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (100,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (101,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (102,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (103,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (104,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (105,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (107,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (108,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (109,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (111,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (112,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (113,0,0,0,0,0,0,0,0,0);
+#INSERT INTO `jc_channel_count` (`channel_id`, `views`, `views_month`, `views_week`, `views_day`, `content_count_total`, `content_count_day`, `content_count_week`, `content_count_month`, `content_count_year`) VALUES (114,0,0,0,0,0,0,0,0,0);
 
 #
-# Source for table jc_channel_fiction
+# Dumping data for table jc_channel_attr
 #
-DROP TABLE IF EXISTS `jc_channel_fiction`;
-CREATE TABLE `jc_channel_fiction` (
-  `channel_id` int(11) NOT NULL,
-  `author` varchar(100) DEFAULT NULL COMMENT '小说作者',
-  PRIMARY KEY (`channel_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS小说栏目内容表';
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (94,'author','首层栏目');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (95,'author','无敌狂徒');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (96,'author','剑轻阳');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (98,'author','胡小淞');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (99,'author','罗玛');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (100,'author','系统标题');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (101,'author','系统作者');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (102,'author','我是森林木');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (103,'author','夜猫袈腊');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (104,'author','别怪太监');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (105,'author','无罪');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (107,'author','睡觉会变白');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (108,'author','世界sss级榜首');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (109,'author','霸道第一仙');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (111,'author','督笔');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (112,'author','System Author');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (113,'author','System Author');
+#INSERT INTO `jc_channel_attr` (`channel_id`, `attr_name`, `attr_value`) VALUES (114,'author','水畔听钟');
 
-#
-# Dumping data for table jc_channel_fiction
-#
-INSERT INTO `jc_channel_fiction` (channel_id, author) VALUES (94, '系统用户');
-
-#
-# Source for table jc_channel_fiction_txt
-#
-DROP TABLE IF EXISTS `jc_channel_fiction`;
-
-CREATE TABLE `jc_channel_fiction_txt` (
-  `channel_id` int(11) NOT NULL,
-  `txt` VARCHAR(1000) DEFAULT NULL COMMENT '小说栏目内容', 
-  `txt1` VARCHAR(1000) DEFAULT NULL COMMENT '小说扩展内容1', 
-  `txt2` VARCHAR(1000) DEFAULT NULL COMMENT '小说扩展内容2', 
-  `txt3` VARCHAR(1000) DEFAULT NULL COMMENT '小说扩展内容3',
-  PRIMARY KEY (`channel_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='CMS小说栏目内容表';
-
-#
-# Dumping data for table jc_channel_fiction_txt
-#
-# TODO:
-
-
-
-
-
-#
-#  Foreign keys for table jc_channel_fiction
-#
-ALTER TABLE `jc_channel_fiction`
-ADD CONSTRAINT `fk_jc_fiction_channel` FOREIGN KEY (`channel_id`) REFERENCES `jc_channel` (`channel_id`);
-
-#
-#  Foreign keys for table jc_channel_fiction_txt
-#
-ALTER TABLE `jc_channel_fiction_txt`
-ADD CONSTRAINT `fk_jc_fiction_txt_channel` FOREIGN KEY (`channel_id`) REFERENCES `jc_channel` (`channel_id`);
-
+SET FOREIGN_KEY_CHECKS=1;
