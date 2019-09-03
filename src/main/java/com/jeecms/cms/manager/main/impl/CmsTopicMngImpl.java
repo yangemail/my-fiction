@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -124,6 +125,7 @@ public class CmsTopicMngImpl implements CmsTopicMng, ChannelDeleteChecker {
 	private CmsTopicDao dao;
 
 	@Autowired
+	@Qualifier("cmsTopicDao")
 	public void setDao(CmsTopicDao dao) {
 		this.dao = dao;
 	}

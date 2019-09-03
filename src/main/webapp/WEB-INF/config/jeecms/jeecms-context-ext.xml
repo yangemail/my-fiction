@@ -7,9 +7,12 @@
 	<!-- Customized 标签 -->
 	<bean id="cms_channel_list2"
 		class="com.ext.cms.action.directive.ChannelListDirective2" />
+	<bean id="cms_topic_list2"
+		class="com.ext.cms.action.directive.CmsTopicListDirective2" />
 
 	<!-- Customized MANAGER -->
-	<bean id="channelMng2" class="com.ext.cms.manager.main.impl.ChannelMngImpl2">
+	<bean id="channelMng2"
+		class="com.ext.cms.manager.main.impl.ChannelMngImpl2">
 		<property name="deleteCheckerList">
 			<list>
 				<ref bean="contentMng" />
@@ -18,8 +21,12 @@
 			</list>
 		</property>
 	</bean>
+	<bean id="cmsTopicMng2"
+		class="com.ext.cms.manager.main.impl.CmsTopicMngImpl2" />
 
 	<!-- Customized DAO -->
-	<bean id="channelDao"
+	<bean id="channelDao2"
 		class="com.ext.cms.dao.main.impl.ChannelDaoImpl2" />
+	<bean id="cmsTopicDao2"
+		class="com.ext.cms.dao.main.impl.CmsTopicDaoImpl2" />
 </beans>
