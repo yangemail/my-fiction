@@ -35,7 +35,7 @@ public class ChannelListDirective2 extends AbstractChannelDirective2 {
 	/**
 	 * 模板名称
 	 */
-	public static final String TPL_NAME = "channel_list";
+	public static final String TPL_NAME = "channel_list2";
 
 	/**
 	 * 输入参数，栏目ID。允许多个栏目ID，用","分开。排斥其他所有筛选参数。
