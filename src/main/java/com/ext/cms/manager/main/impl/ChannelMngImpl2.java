@@ -21,8 +21,8 @@ public class ChannelMngImpl2 extends ChannelMngImpl implements ChannelMng2 {
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<Channel> getListBySiteIdForTag(Integer siteId, boolean hasContentOnly, Boolean recommend,
-			int orderBy, Integer first, Integer count) {
+	public List<Channel> getListBySiteIdForTag(Integer siteId, boolean hasContentOnly, Boolean recommend, int orderBy,
+			Integer first, Integer count) {
 		return channelDao2.getListBySiteId(siteId, hasContentOnly, true, true, recommend, orderBy, first, count);
 	}
 
@@ -35,7 +35,8 @@ public class ChannelMngImpl2 extends ChannelMngImpl implements ChannelMng2 {
 	@Override
 	public Object getChildListByParentIdForTag(Integer parentId, boolean hasContentOnly, Boolean recommend, int orderBy,
 			Integer first, Integer count) {
-		return channelDao2.getChildListByParentId(parentId, hasContentOnly, true, true, recommend, orderBy, first, count);
+		return channelDao2.getChildListByParentId(parentId, hasContentOnly, true, true, recommend, orderBy, first,
+				count);
 	}
 
 	@Override
@@ -43,7 +44,5 @@ public class ChannelMngImpl2 extends ChannelMngImpl implements ChannelMng2 {
 			int count) {
 		return channelDao2.getChildList(hasContentOnly, true, true, recommend, orderBy, first, count);
 	}
-	
-	
 
 }

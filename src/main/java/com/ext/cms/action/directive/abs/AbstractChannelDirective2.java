@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ext.cms.manager.main.ChannelMng2;
 import com.jeecms.cms.action.directive.abs.AbstractChannelDirective;
-import com.jeecms.cms.manager.main.ChannelMng;
 import com.jeecms.common.web.freemarker.DirectiveUtils;
 import com.jeecms.core.entity.CmsSite;
 import com.jeecms.core.web.util.FrontUtils;
@@ -14,8 +13,6 @@ import com.jeecms.core.web.util.FrontUtils;
 import freemarker.core.Environment;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateModel;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 栏目标签基类
